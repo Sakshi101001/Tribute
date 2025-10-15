@@ -28,12 +28,17 @@ It highlights various aspects of his journey and the empire he built, presented 
 
 ## 🖼️ Website Preview  
 
-![Homepage Preview]<img width="1920" height="1080" alt="Screenshot (67)" src="https://github.com/user-attachments/assets/873d0527-f835-4e4b-afd9-1716022f6b70" />
-![History Section] <img width="1920" height="1080" alt="Screenshot (69)" src="https://github.com/user-attachments/assets/9c8a7528-9371-44f9-9d0c-e5746119c4ca" />
-![Mavlas Section] <img width="1920" height="1080" alt="Screenshot (72)" src="https://github.com/user-attachments/assets/068a5bc6-23ba-4d61-8590-de7662af021b" />
-![Fort Section]<img width="1920" height="1080" alt="Screenshot (70)" src="https://github.com/user-attachments/assets/2bf3f801-571e-4b81-9b89-4deefc52b14d" />
-![Movies Section]<img width="1920" height="1080" alt="Screenshot (74)" src="https://github.com/user-attachments/assets/41e73d7c-c2bf-49f5-939c-8458edece8d8" />
-![Books Section]<img width="1920" height="1080" alt="Screenshot (73)" src="https://github.com/user-attachments/assets/a65fcd8a-55c4-4f82-bd57-e4d7d03352e9" />
+Homepage Preview<img width="1920" height="1080" alt="Screenshot (67)" src="https://github.com/user-attachments/assets/873d0527-f835-4e4b-afd9-1716022f6b70" />
+
+History Section <img width="1920" height="1080" alt="Screenshot (69)" src="https://github.com/user-attachments/assets/9c8a7528-9371-44f9-9d0c-e5746119c4ca" />
+
+Mavlas Section <img width="1920" height="1080" alt="Screenshot (72)" src="https://github.com/user-attachments/assets/068a5bc6-23ba-4d61-8590-de7662af021b" />
+
+Fort Section<img width="1920" height="1080" alt="Screenshot (70)" src="https://github.com/user-attachments/assets/2bf3f801-571e-4b81-9b89-4deefc52b14d" />
+
+Movies Section<img width="1920" height="1080" alt="Screenshot (74)" src="https://github.com/user-attachments/assets/41e73d7c-c2bf-49f5-939c-8458edece8d8" />
+
+Books Section<img width="1920" height="1080" alt="Screenshot (73)" src="https://github.com/user-attachments/assets/a65fcd8a-55c4-4f82-bd57-e4d7d03352e9" />
 
 
 ---
