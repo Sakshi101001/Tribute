@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History - Chhatrapati Shivaji Maharaj</title>
+  <style>
+    /* ===== HISTORY SECTION ===== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      padding: 10px 0;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: orange;
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      width: 50%;
+      padding: 20px 40px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      cursor: pointer;
+    }
+    .timeline-item[data-visible] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-item.right {
+      left: 50%;
+    }
+    .timeline-content {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0px 4px 15px rgba(255,140,0,0.2);
+      transition: transform 0.3s;
+    }
+    .timeline-content:hover {
+      transform: scale(1.03);
+    }
+    .timeline-content h3 {
+      color: orange;
+      margin-bottom: 10px;
+    }
+    .timeline-content p {
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: orange;
+      border: 3px solid #111;
+      z-index: 1;
+    }
+    .timeline-item.left::after {
+      right: -9px;
+    }
+    .timeline-item.right::after {
+      left: -9px;
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+      .timeline-line { left: 20px; }
+      .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        text-align: left;
+      }
+      .timeline-item::after { left: 14px; }
+      .timeline-item.left,
+      .timeline-item.right { left: 0; }
+    }
+
+    /* ===== MODAL ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 60px 20px;
+      animation: fadeIn 0.3s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      max-width: 700px;
+      margin: auto;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0px 0px 20px rgba(255,140,0,0.3);
+    }
+    .modal-content h3 {
+      color: orange;
+      margin-bottom: 10px;
+    }
+    .modal-content p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    .modal-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+    .close {
+      color: orange;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .close:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- History Section -->
+<section id="history-section" style="padding:60px 20px; text-align:center;">
+  <h2 style="color:orange; font-size:2.5rem; margin-bottom:40px;">Chhatrapati Shivaji Maharaj: The Crown of Maharashtra</h2>
+  <p style="font-size:1rem; color:#ccc; line-height:1.8; margin-bottom:50px;">
+    Click on any era to explore more about Shivaji Maharaj’s remarkable journey.
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-item left" onclick="openModal('earlyLife')">
+      <div class="timeline-content">
+        <h3>Early Life (1630–1645)</h3>
+        <p>Born at Shivneri Fort — the beginning of a legend.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right" onclick="openModal('swarajya')">
+      <div class="timeline-content">
+        <h3>Foundation of Swarajya (1646–1659)</h3>
+        <p>Captured Torna Fort — his first step toward Swarajya.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left" onclick="openModal('battles1')">
+      <div class="timeline-content">
+        <h3> Pratapgad – (1659)</h3>
+        <p>Battle with Afzal Khan</p>
+      </div>
+    </div>
+    <div class="timeline-item right" onclick="openModal('battles2')">
+      <div class="timeline-content">
+        <h3>Surat - (1664)</h3>
+        <p>for the raid on Surat.</p>
+      </div>
+    </div>
+        <div class="timeline-item left" onclick="openModal('battles3')">
+      <div class="timeline-content">
+        <h3>Agra - (1666)</h3>
+        <p>for the daring escape from Agra.</p>
+      </div>
+    </div>
+    <div class="timeline-item right" onclick="openModal('coronation')">
+      <div class="timeline-content">
+        <h3>Coronation at Raigad (1674)</h3>
+        <p>Crowned as Chhatrapati — the true protector of Swarajya.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left" onclick="openModal('legacy')">
+      <div class="timeline-content">
+        <h3>Legacy (1680 & Beyond)</h3>
+        <p>His ideals continue to inspire generations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALS -->
+<div id="modal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content" id="modal-content"></div>
+</div>
+
+<script>
+  // Data for modals
+  const modalData = {
+    earlyLife: {
+      title: "Early Life (1630–1645)",
+      text: "Shivaji Maharaj was born in 1630 at Shivneri Fort. Under Jijamata’s guidance, he was deeply inspired by stories of valor and dharma. His early education focused on warfare, administration, and ethics.",
+      img: "static/img/childhood.jpg"
+    },
+    swarajya: {
+      title: "Foundation of Swarajya (1646–1659)",
+      text: "At a young age, Shivaji Maharaj captured Torna Fort — his first conquest. Over time, he established control over many forts like Rajgad and Pratapgad, laying the foundations of Hindavi Swarajya.",
+      img: "static/img/swarajya.webp"
+    },
+    battles1: {
+      title: "Afzal Khan Vadh",
+      text: "Afzal Khan, a powerful general of Bijapur, was sent to capture Shivaji Maharaj. Using his wit and courage, Shivaji Maharaj defeated and killed Afzal Khan at Pratapgad, marking a turning point in the rise of Swarajya.",
+      img: "static/img/afzalkhan vadh.jpg",
+    },
+        battles2: {
+      title: "Surat Loot",
+      text: "To fund his growing empire, Shivaji Maharaj led a successful raid on the wealthy Mughal port city of Surat. He targeted the riches of Mughal officials and merchants, ensuring that the common people were unharmed — a rare act of discipline in warfare. Popularly known as 'सुरतेची लूट'",
+      img:"static/img/Surat-Loot.jpg",
+    },
+        battles3: {
+      title: "Agra Escape",
+      text: "Invited by Aurangzeb to Agra, Shivaji Maharaj was deceitfully placed under house arrest. Demonstrating unmatched intelligence and bravery, he and his son Sambhaji escaped in disguise, stunning the Mughal Empire and reasserting his independence.Popularly known as 'आग्र्याची सुटका'",
+      img:"static/img/escape.jpg",
+    },
+    coronation: {
+      title: "Coronation at Raigad (1674)",
+      text: "Shivaji Maharaj was crowned as Chhatrapati at Raigad Fort, establishing a strong administration and naval power. This marked the formal foundation of the Maratha Empire.",
+      img: "static/img/coronation.jpg"
+    },
+    legacy: {
+      title: "Legacy (1680 & Beyond)",
+      text: "Chhatrapati Shivaji Maharaj’s ideals of Swarajya, justice, and self-rule became guiding principles for future generations, inspiring India’s freedom movement.",
+      img: "static/img/meghdambari.jpg"
+    }
+  };
+
+  function openModal(key) {
+    const modal = document.getElementById("modal");
+    const content = document.getElementById("modal-content");
+    const data = modalData[key];
+    content.innerHTML = `
+      <h3>${data.title}</h3>
+      <p>${data.text}</p>
+      <img src="${data.img}" alt="${data.title}">
+    `;
+    modal.style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  // Close on outside click
+  window.onclick = function(event) {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // Scroll animation for timeline items
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.setAttribute("data-visible", true);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".timeline-item").forEach(item => {
+    observer.observe(item);
+  });
+</script>
+</body>
+</html>

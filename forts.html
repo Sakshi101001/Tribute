@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forts of Chhatrapati Shivaji Maharaj</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+    section.forts {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    section.forts h2 {
+      font-size: 2.5rem;
+      color: orange;
+      margin-bottom: 30px;
+    }
+    .forts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .fort-card {
+      background: #1f1f1f;
+      border: 2px solid orange;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .fort-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .fort-card:hover {
+      transform: scale(1.05);
+      background: orange;
+      color: black;
+    }
+    .fort-card h3 {
+      margin: 10px 0;
+      /* color: white; */
+    }
+    .fort-card p {
+      padding: 0 10px 15px;
+      font-size: 14px;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #1f1f1f;
+      padding: 20px;
+      border: 2px solid orange;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      text-align: left;
+    }
+    .modal-content h2 {
+      color: orange;
+      margin-top: 0;
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+      color: orange;
+    }
+    .close:hover {
+      color: red;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: orange;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ff6600;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="forts">
+    <h2>Forts — The Pillars of Swarajya</h2>
+      <p style="font-size:1rem; color:#ccc; line-height:1.8; margin-bottom:50px;">
+    Click and Explore each fort to uncover the stories of Shivaji Maharaj's conquests.
+  </p>
+    <div class="forts-grid">
+      <div class="fort-card" onclick="openFort('raigad')">
+        <img src="static\img\raigadh.jpg" alt="Raigad Fort">
+        <h3>Raigad Fort</h3>
+        <p>Capital fort of the Maratha Empire.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('torna')">
+        <img src="static\img\Torna Fort.avif" alt="Torna Fort">
+        <h3>Torna Fort</h3>
+        <p>First fort captured by Shivaji Maharaj.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('sinhagad')">
+        <img src="static\img\Sinhagad Fort.jfif" alt="Sinhagad Fort">
+        <h3>Sinhagad Fort</h3>
+        <p>Known for Tanaji Malusare’s bravery.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('pratapgad')">
+        <img src="static\img\Pratapgad Fort.jfif" alt="Pratapgad Fort">
+        <h3>Pratapgad Fort</h3>
+        <p>Site of the battle with Afzal Khan.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('rajgad')">
+        <img src="static\img\Rajgad Fort.jpg" alt="Rajgad Fort">
+        <h3>Rajgad Fort</h3>
+        <p>Initial capital of Shivaji Maharaj.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('lohagad')">
+        <img src="static\img\Lohagad Fort.jfif" alt="Lohagad Fort">
+        <h3>Lohagad Fort</h3>
+        <p>Strategic fort near Pune.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('visapur')">
+        <img src="static\img\visapur fort.jpg" alt="Visapur Fort">
+        <h3>Visapur Fort</h3>
+        <p>Neighboring fort to Lohagad.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('sindhudurg')">
+        <img src="static\img\Sindhudurg Fort.jfif" alt="Sindhudurg Fort">
+        <h3>Sindhudurg Fort</h3>
+        <p>Iconic sea fort built by Shivaji Maharaj.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('vijaydurg')">
+        <img src="static\img\Vijaydurg Fort.jfif" alt="Vijaydurg Fort">
+        <h3>Vijaydurg Fort</h3>
+        <p>Strong naval base of the Marathas.</p>
+      </div>
+      <div class="fort-card" onclick="openFort('janjira')">
+        <img src="static\img\Janjira Fort.jfif" alt="Janjira Fort">
+        <h3>Janjira Fort</h3>
+        <p>Invincible sea fort, never conquered.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="raigad" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('raigad')">&times;</span><h2>Raigad Fort</h2><p>The capital fort of Chhatrapati Shivaji Maharaj. His coronation took place here in 1674.<br><a href="https://en.wikipedia.org/wiki/Raigad_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="torna" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('torna')">&times;</span><h2>Torna Fort</h2><p>Also known as Prachandgad, it was the first fort captured by Shivaji Maharaj at the age of 16.<br><a href="https://en.wikipedia.org/wiki/Torna_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="sinhagad" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('sinhagad')">&times;</span><h2>Sinhagad Fort</h2><p>Famous for the battle where Tanaji Malusare fought bravely against Mughals.<br><a href="https://en.wikipedia.org/wiki/Sinhagad_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="pratapgad" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('pratapgad')">&times;</span><h2>Pratapgad Fort</h2><p>Known for the legendary battle with Afzal Khan in 1659.<br><a href="https://en.wikipedia.org/wiki/Pratapgad_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="rajgad" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('rajgad')">&times;</span><h2>Rajgad Fort</h2><p>Served as the capital of the Maratha Empire for over 25 years before Raigad.<br><a href="https://en.wikipedia.org/wiki/Rajgad_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="lohagad" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('lohagad')">&times;</span><h2>Lohagad Fort</h2><p>Located near Lonavala, used to guard important trade routes.<br><a href="https://en.wikipedia.org/wiki/Lohagad_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="visapur" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('visapur')">&times;</span><h2>Visapur Fort</h2><p>A large fort next to Lohagad, built to strengthen Maratha defenses.<br><a href="https://en.wikipedia.org/wiki/Visapur_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="sindhudurg" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('sindhudurg')">&times;</span><h2>Sindhudurg Fort</h2><p>A sea fort built by Shivaji Maharaj in 1664 to protect the Maratha navy.<br><a href="https://en.wikipedia.org/wiki/Sindhudurg_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="vijaydurg" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('vijaydurg')">&times;</span><h2>Vijaydurg Fort</h2><p>One of the strongest sea forts, often called the "Gibraltar of the East".<br><a href="https://en.wikipedia.org/wiki/Vijaydurg_Fort" class="btn"> Explore More.</a></p></div></div>
+  <div id="janjira" class="modal"><div class="modal-content"><span class="close" onclick="closeFort('janjira')">&times;</span><h2>Janjira Fort</h2><p>Located on an island, Janjira was considered invincible and was never conquered by Shivaji Maharaj.<br><a href="https://en.wikipedia.org/wiki/janjira_Fort" class="btn"> Explore More.</a></p></div></div>
+
+  <script>
+    function openFort(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeFort(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

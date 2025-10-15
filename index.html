@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chhatrapati Shivaji Maharaj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Serif+Devanagari:wght@400;700&family=Mukta:wght@400;700&family=Baloo+2:wght@400;700&display=swap"rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+  .font-serif {
+    font-family: "Noto Serif Devanagari", "Devanagari MT", "Nirmala UI", serif;
+    font-weight: 600;
+    font-size: 2.0rem;
+  }
+    /* Navbar */
+    nav {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: orange;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: orange;
+    }
+
+    /* Hero Section */
+.hero {
+  height: 70vh;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url('static/img/maharaj.jpg') center center / contain no-repeat;
+  background-color: #000; /* fills empty space around the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Keep it neat on smaller screens */
+@media (max-width: 992px) {
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 80vh;
+    background-size: contain;
+  }
+}
+
+
+
+    .hero h1 {
+      font-size: 3rem;
+      color: orange;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    /* Sections Grid */
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background: #1f1f1f;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 5px 20px rgba(255,140,0,0.5);
+    }
+    .card h3 {
+      color: orange;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: orange;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ff6600;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Responsive Navbar (Mobile) */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: orange;
+      }
+    }
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><h1 class="devanagari font-serif epic">क्षत्रिय कुलावतंस</h1></div>
+    <div class="menu-toggle">☰</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>&nbsp;
+      <li><a href="history.html">History</a></li>&nbsp;
+      <li><a href="forts.html">Forts</a></li>&nbsp;
+      <li><a href="mavlas.html">Mavlas</a></li>&nbsp;
+      <li><a href="books.html">Books</a></li>&nbsp;
+      <li><a href="movies.html">Movies</a></li>&nbsp;
+      <!-- <li><a href="familytree.html">Family Tree</a></li>
+      <li><a href="gallery.html">Gallery</a></li> -->
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Chhatrapati Shivaji Maharaj</h1>
+      <p>From a mother's dream to a warrior's destiny — <br>Maharaj built an empire where honor and justice reigned.</p>
+    </div>
+  </section>
+
+  <!-- Sections -->
+  <section class="sections">
+    <div class="card">
+      <h3>History</h3>
+      <p>Know about Shivaji Maharaj's life, struggles, and victories.</p>
+      <a href="history.html" class="btn">Read More</a>
+    </div>
+    <div class="card">
+      <h3>Forts</h3>
+      <p>Explore the mighty forts that were central to Swarajya.</p>
+      <a href="forts.html" class="btn">Explore</a>
+    </div>
+    <div class="card">
+      <h3>Mavlas</h3>
+      <p>Meet the brave Mavlas who supported Maharaj’s vision.</p>
+      <a href="mavlas.html" class="btn">Discover</a>
+    </div>
+    <div class="card">
+      <h3>Books</h3>
+      <p>Books written about Shivaji Maharaj and his glorious rule.</p>
+      <a href="books.html" class="btn">Check</a>
+    </div>
+    <div class="card">
+      <h3>Movies</h3>
+      <p>Films and documentaries showcasing Shivaji Maharaj’s legacy.</p>
+      <a href="movies.html" class="btn">Watch</a>
+    </div>
+    <!-- <div class="card">
+      <h3>Family Tree</h3>
+      <p>Know about Shivaji Maharaj’s lineage and ancestors.</p>
+      <a href="familytree.html" class="btn">View</a>
+    </div>
+    <div class="card">
+      <h3>Gallery</h3>
+      <p>Historical paintings, monuments, and sculptures.</p>
+      <a href="gallery.html" class="btn">Open</a>
+    </div> -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p> Chhatrapati Shivaji Maharaj Website | Designed by Sakshi Kadam.</p>
+  </footer>
+
+  <script>
+    // Toggle menu in mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

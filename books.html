@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .books {
+  padding: 50px;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+.books h2 {
+  color: orange;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.book-card {
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.book-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 20px rgba(255,140,0,0.5);
+}
+.book-card h3 {
+  margin: 10px 0;
+  color: orange;
+}
+.book-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.book-card img {
+  width: 100%;
+  height: 250px;   /* set fixed height if needed */
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #000; 
+}
+
+    </style>
+</head>
+<body>
+    <section class="books">
+  <h2>Shivaji Maharaj in Words: Must-Read Books"</h2>
+  <div class="book-grid">
+    <div class="book-card">
+      <img src="static\img\Shivaji The Great Maratha.jpg" alt="Book Cover">
+      <h3>Shivaji: The Great Maratha</h3>
+      <p>By Ranjit Desai, Vikrant Pande </p>
+      <a href="https://www.amazon.in/s?k=shivaji+the+great+maratha+book&crid=1VZGIE0N7BW7Z&sprefix=Shivaji%3A+The+Great+Maratha%2Caps%2C348&ref=nb_sb_ss_mvt-t11-ranker_3_25" target="_blank" class="btn">Buy on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="static\img\shrimanyogi.jpg" alt="Book Cover">
+      <h3>Shriman Yogi</h3>
+      <p>By Ranjit Desai </p>
+       <a href="https://www.amazon.in/s?k=Shriman+Yogi+book&crid=225DRAHG6OUZ0&sprefix=shriman+yogi+book%2Caps%2C286&ref=nb_sb_noss_1" target="_blank" class="btn">Buy on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="static\img\Raja Shivchatrapati.jpg" alt="Book Cover">
+      <h3>Raja shivchatrapati</h3>
+      <p>By Babasaheb Purandare</p>
+       <a href="https://www.amazon.in/s?k=Raja+shivchatrapati+book&crid=2L28VS3H5XFTV&sprefix=raja+shivchatrapati+book%2Caps%2C302&ref=nb_sb_noss_1" target="_blank" class="btn">Buy on Amazon</a>
+    </div>
+  </div>
+<br>
+<br>
+  <div class="book-grid">
+    <div class="book-card">
+      <img src="static\img\Shivaji The Grand Rebel.jpg" alt="Book Cover">
+      <h3>Shivaji: The Grand Rebel</h3>
+      <p>By Dennis Kincaid </p>
+       <a href="https://www.amazon.in/s?k=Shivaji%3A+The+Grand+Rebel+book&crid=1IASQWDMHP8VC&sprefix=shivaji+the+grand+rebel+book%2Caps%2C282&ref=nb_sb_noss" target="_blank" class="btn">Buy on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="static\img\Tales Of Shivaji.jpg" alt="Book Cover">
+      <h3>Tales Of Shivaji (Amar Chitra Katha)</h3>
+      <p>By Anant Pai</p>
+       <a href="https://www.amazon.in/s?k=Tales+Of+Shivaji+%28Amar+Chitra+Katha%29+book&crid=3DXAEGUXQUY56&sprefix=tales+of+shivaji+amar+chitra+katha+book%2Caps%2C342&ref=nb_sb_noss" target="_blank" class="btn">Buy on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="static\img\Challenging Destiny.webp" alt="Book Cover">
+      <h3>Challenging Destiny</h3>
+      <p>By Medha Deshmukh Bhaskaran​</p>
+       <a href="https://www.amazon.in/s?k=Challenging+Destiny+book&crid=1G692N9P5KCMB&sprefix=challenging+destiny+book%2Caps%2C301&ref=nb_sb_noss_2" target="_blank" class="btn">Buy on Amazon</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

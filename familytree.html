@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shivaji Maharaj Family Tree</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+    section.family-tree {
+      padding: 50px;
+      text-align: center;
+    }
+    section.family-tree h2 {
+      color: orange;
+      margin-bottom: 30px;
+    }
+    /* Tree */
+    .tree ul {
+      padding-top: 20px; 
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tree li {
+      list-style-type: none;
+      margin: 0 20px;
+      text-align: center;
+      position: relative;
+      padding: 20px 5px 0 5px;
+    }
+    .tree li::before, .tree li::after {
+      content: '';
+      position: absolute; 
+      top: 0; 
+      right: 50%; 
+      border-top: 2px solid orange;
+      width: 50%; 
+      height: 20px;
+    }
+    .tree li::after {
+      right: auto; 
+      left: 50%; 
+      border-left: 2px solid orange;
+    }
+    .tree li:only-child::before, .tree li:only-child::after {
+      display: none;
+    }
+    .tree li:only-child { 
+      padding-top: 0;
+    }
+    .tree li a {
+      display: inline-block;
+      border: 2px solid orange;
+      padding: 8px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: orange;
+      font-weight: bold;
+      background: #1f1f1f;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .tree li a:hover {
+      background: orange;
+      color: black;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 5px 20px rgba(255,140,0,0.5);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .modal .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+      color: orange;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+<section class="family-tree">
+  <h2>Chhatrapati Shivaji Maharaj - Family Tree</h2>
+  <div class="tree">
+    <ul>
+      <li>
+        <a onclick="openModal('shivaji')">Chhatrapati Shivaji Maharaj</a>
+        <ul>
+          <!-- Wives in a single line -->
+          <li>
+            <ul>
+              <li><a onclick="openModal('saibai')">Saibai</a></li>
+              <li><a onclick="openModal('soyarabai')">Soyarabai</a></li>
+              <li><a onclick="openModal('putalabai')">Putalabai</a></li>
+              <li><a onclick="openModal('sakvarbai')">Sakvarbai</a></li>
+              <li><a onclick="openModal('kashibai')">Kashibai</a></li>
+            </ul>
+          </li>
+          <!-- Children in second row -->
+          <li>
+            <ul>
+              <li><a onclick="openModal('sambhaji')">Sambhaji Maharaj</a></li>
+              <li><a onclick="openModal('ranubai')">Ranubai</a></li>
+              <li><a onclick="openModal('ambikabai')">Ambikabai</a></li>
+              <li><a onclick="openModal('rajaram')">Rajaram Maharaj</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="shivaji" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('shivaji')">&times;</span><h2>Chhatrapati Shivaji Maharaj</h2><p>Founder of Maratha Empire, great warrior king and visionary leader.</p></div></div>
+<div id="saibai" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('saibai')">&times;</span><h2>Saibai Nimbalkar</h2><p>Chief consort of Shivaji Maharaj, mother of Sambhaji, Ranubai, Ambikabai.</p></div></div>
+<div id="soyarabai" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('soyarabai')">&times;</span><h2>Soyarabai</h2><p>Second wife of Shivaji Maharaj, mother of Rajaram Maharaj.</p></div></div>
+<div id="putalabai" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('putalabai')">&times;</span><h2>Putalabai</h2><p>Third wife of Shivaji Maharaj, childless, known for her devotion.</p></div></div>
+<div id="sakvarbai" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('sakvarbai')">&times;</span><h2>Sakvarbai</h2><p>Fourth wife of Shivaji Maharaj.</p></div></div>
+<div id="kashibai" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('kashibai')">&times;</span><h2>Kashibai</h2><p>Fifth wife of Shivaji Maharaj.</p></div></div>
+<div id="sambhaji" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('sambhaji')">&times;</span><h2>Sambhaji Maharaj</h2><p>Son of Shivaji & Saibai. 2nd Chhatrapati of the Maratha Empire.</p></div></div>
+<div id="ranubai" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('ranubai')">&times;</span><h2>Ranubai</h2><p>Daughter of Shivaji & Saibai. Married into Jadhav family.</p></div></div>
+<div id="ambikabai" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('ambikabai')">&times;</span><h2>Ambikabai</h2><p>Daughter of Shivaji & Saibai. Married Harji Raje Mahadik.</p></div></div>
+<div id="rajaram" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('rajaram')">&times;</span><h2>Rajaram Maharaj</h2><p>Son of Shivaji & Soyarabai. Ruled after Sambhaji Maharaj.</p></div></div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
